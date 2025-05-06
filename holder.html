@@ -1,0 +1,635 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:  'Roboto';
+}
+
+.navbar {
+  background: #131313;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px; 
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar__logo { 
+  background-color: purple;
+  background-image: linear-gradient(to top, #311B92 0%, #EDE7F6 100%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.fa-gem {
+  margin-right: 0.5rem;
+
+}
+
+.navbar__menu { 
+  display: flex;
+  align-items:center;
+  list-style: none;
+  text-align: center;
+
+}
+
+.navbar__item {
+  height: 80px;
+}
+
+.navbar__links {
+  color: #fff;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration:none;
+  padding:0 1rem;
+  height: 100%;
+}
+
+.navbar__btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border-radius: 4px;
+  background: #f77062;
+  color: #fff;
+}
+
+.button:hover {
+  background-color: #4837ff;
+  transition: all 0.3s ease;
+}
+
+.navbar__links:hover {
+  color: #311B92;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px){
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0;
+  }
+
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    height: 50vh;
+    z-index: -1;
+    background-color: #131313;
+  }
+
+  .navbar__menu.active { 
+    background-color: #131313;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 50vh;
+    font-size: 1.6rem;
+  }
+
+  #navbar__logo {
+    padding-left: 25px;
+
+  }
+
+  .navbar__toggle .bar { 
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff
+  }
+
+  .navbar__item {
+    width: 100%;
+
+  }
+
+  .navbar__links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  .navbar__btn {
+    padding-bottom: 2rem;
+
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin:0;
+  }
+
+  .navbar__toggle .bar {
+    display:block;
+    cursor: pointer;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+.main {
+  height: 100vh;
+  background-image: url('img/pic1.jpg'); /* Make sure this path is correct */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional overlay for text contrast */
+  z-index: 1;
+}
+
+.main__content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.main__content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.main__content h2 {
+  font-size: 1.5rem;
+}
+
+
+.description-section {
+  padding: 50px 20px;
+  background-color: #311432;
+}
+
+.description-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.description-text {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.description-text h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color:#fff;
+  font-family: 'Roboto';
+}
+
+.description-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color:#fff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.description-image {
+  flex: 1;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.description-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .description-container {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .description-text,
+  .description-image {
+    padding: 10px;
+    min-width: 100%;
+    text-align: center;
+  }
+
+  .description-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .description-text p {
+    font-size: 1rem;
+  }
+
+  .description-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+.cast-section {
+  padding: 60px 20px;
+  background-color: #493F5E;
+  color: #fff;
+  font-family: 'Trebuchet MS', sans-serif;
+  text-align: center;
+}
+
+.cast-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+/* Each cast member */
+.cast-member {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Cast images */
+.cast-image {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+}
+
+.cast-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Description box */
+.cast-info {
+  flex: 1.5;
+  background-color: #522D80;
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 280px;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cast-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #f1f1f1;
+}
+
+.cast-info p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .cast-member {
+    flex-direction: column;
+  }
+
+  .cast-info {
+    text-align: center;
+  }
+}
+
+
+.site-footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 40px 20px 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  text-align: left;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px 0;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  margin-bottom: 15px;
+  color: #ffb6c1;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ffb6c1;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  color: #aaa;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-column {
+    margin-bottom: 20px;
+  }
+}
+
+.trailer-section {
+  background-color: #241734;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.trailer-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TFM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="/" id="navbar__logo">Under Seventh Heaven</a>
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="navbar__menu">
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">
+            About
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">
+            Crew
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">
+            Cast
+          </a>
+        </li>
+        <li class="navbar__item">
+          <a href="/" class="navbar__links">
+            Support
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="main">
+    <div class="main__container">
+      <div class="main__content">
+        <h1>Under Seventh Heaven</h1>
+        <h2>Short Film by TFM Students</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Description  -->
+<section class="description-section">
+  <div class="description-container">
+    <div class="description-text">
+      <h2>Behind the Story</h2>
+      <p>At a weekend music festival getaway in a sleek Airbnb, Ilah reunites with old friends from her past, including Monica—the girl who once left her behind. As tensions rise and unspoken feelings resurface, the two are drawn into a dance of confrontation, regret, and unresolved emotions. What begins as a lively reunion spirals into a night of intimate confessions and raw vulnerability, forcing them to face the truth they’ve both been avoiding. Between the pulse of the music and the weight of their past, Ilah and Monica must decide if they can forgive, let go, or finally embrace what’s been simmering between them for years.</p>
+    </div>
+    <div class="description-image">
+      <img src="img/pic2.jpg" alt="Behind the scenes" />
+    </div>
+  </div>
+</section>
+
+<!-- Meet the Cast Section -->
+<section class="cast-section">
+  <h2 class="cast-title">Meet the Cast</h2>
+  <div class="cast-member">
+    <div class="cast-image">
+      <img src="img/MONICA.jpg" alt="Cast Member 1">
+    </div>
+    <div class="cast-info">
+      <h3>Tiffany Huang (Monica)</h3>
+      <p>Polished and poised, Monica is the quintessential "golden child," shaped by the expectations of her family and peers, yet quietly burdened by inner conflict. A reserved bookworm more comfortable in solitude than in crowds, she has always followed a carefully scripted path—graduating from a prestigious college and recently earning acceptance into medical school. But beneath her composed exterior lies a woman still haunted by a painful past. Ilah, her former best friend and first love, was the one person who challenged Monica’s scripted life, and when Monica’s fear took over, she betrayed that bond by staying silent after Ilah’s secret was exposed. Now, as she joins an Airbnb getaway to reconnect with old friends—including Ilah—Monica is forced to confront the consequences of her silence and the emotions she’s suppressed for years.</p>
+
+    </div>
+  </div>
+
+  <div class="cast-member">
+    <div class="cast-image">
+      <img src="img/NANA.jpg" alt="Cast Member 2">
+    </div>
+    <div class="cast-info">
+      <h3>Nana (Ilah)</h3>
+      <p>Bold, confident, and unpredictable, Ilah is a working dancer who channels her passion into her craft, masking deep emotional scars behind a tough, charismatic exterior. Years ago, her former best friend and first love, Monica, ghosted her—accidentally outing Ilah’s sexuality and triggering a rift with her traditional Asian family that led to a traumatic experience with conversion therapy. Since then, Ilah has struggled to form lasting connections, wary of vulnerability and slow to trust. Though she finds solace in music and dance, she remains haunted by the past. When she’s invited to an Airbnb getaway with old friends—many of whom she left behind—Ilah is torn between the promise of renewal and the weight of old wounds. </p>
+    </div>
+  </div>
+</section>
+
+<!-- Trailer Section -->
+<section class="trailer-section">
+  <div class="trailer-container">
+    <h2>Watch the Trailer</h2>
+    <div class="video-wrapper">
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+        title="Under Seventh Heaven Trailer" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-column">
+      <h3>Under Seventh Heaven</h3>
+    </div>
+    <div class="footer-column">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="https://www.instagram.com/underseventhheaven/" target="_blank">Instagram</a></li>
+        <li><a href="https://youtube.com" target="_blank">YouTube</a></li>
+        <li><a href="https://tiktok.com" target="_blank">TikTok</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="https://venmo.com" target="_blank">Venmo</a></li>
+        <li><a href="https://www.gofundme.com/f/support-josiahs-asian-american-romance-film?attribution_id=sl:7cdef769-e1a9-4ad8-892f-c3309b0d49c2&lang=en_US&utm_campaign=fp_sharesheet&utm_content=amp13_c-amp14_t2&utm_medium=customer&utm_source=copy_link" target="_blank">GoFundMe</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Under Seventh Heaven. All rights reserved.</p>
+  </div>
+</footer>
+  
+  <script src="app.js"></script>
+</body>
+</html>
