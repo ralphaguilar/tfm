@@ -45,3 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('loaded');
 });
+
+document.querySelectorAll('.lightbox-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const imgSrc = link.getAttribute('href');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = imgSrc;
+    lightbox.classList.add('active');
+  });
+});
+
+document.getElementById('lightbox').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('active');
+});
