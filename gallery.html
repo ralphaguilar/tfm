@@ -29,16 +29,16 @@
   <section class="cast-section">
     <h2 class="cast-title fade-in-child">Gallery</h2>
     <div class="description-container" style="flex-wrap: wrap; gap: 20px;">
-      <div class="description-image fade-in-child"><img src="gallery/still1.png" alt="Gallery Image 1"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still2.png" alt="Gallery Image 2"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still3.png" alt="Gallery Image 3"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still4.png" alt="Gallery Image 4"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still5.png" alt="Gallery Image 5"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still6.png" alt="Gallery Image 6"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still7.png" alt="Gallery Image 7"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still8.png" alt="Gallery Image 8"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still9.png" alt="Gallery Image 9"></div>
-      <div class="description-image fade-in-child"><img src="gallery/still10.png" alt="Gallery Image 10"></div>
+      <div class="description-image fade-in-child"><a href="gallery/still1.png" class="lightbox-link"><img src="gallery/still1.png" alt="Gallery Image 1"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still2.png" class="lightbox-link"><img src="gallery/still2.png" alt="Gallery Image 2"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still3.png" class="lightbox-link"><img src="gallery/still3.png" alt="Gallery Image 3"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still4.png" class="lightbox-link"><img src="gallery/still4.png" alt="Gallery Image 4"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still5.png" class="lightbox-link"><img src="gallery/still5.png" alt="Gallery Image 5"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still6.png" class="lightbox-link"><img src="gallery/still6.png" alt="Gallery Image 6"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still7.png" class="lightbox-link"><img src="gallery/still7.png" alt="Gallery Image 7"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still8.png" class="lightbox-link"><img src="gallery/still8.png" alt="Gallery Image 8"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still9.png" class="lightbox-link"><img src="gallery/still9.png" alt="Gallery Image 9"></a></div>
+      <div class="description-image fade-in-child"><a href="gallery/still10.png" class="lightbox-link"><img src="gallery/still10.png" alt="Gallery Image 10"></a></div>
     </div>
   </section>
 
@@ -65,6 +65,11 @@
       <p>&copy; 2025 Under Seventh Heaven. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-overlay" id="lightbox">
+    <img src="" alt="Expanded image" id="lightbox-img">
+  </div>
 
   <script src="app.js"></script>
 </body>
